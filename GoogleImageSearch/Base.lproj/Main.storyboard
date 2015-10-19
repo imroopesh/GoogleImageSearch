@@ -1,30 +1,168 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aky-61-6st">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Main View Controller - Google Image Search-->
+        <scene sceneID="Nsi-IO-e60">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="c3Q-9O-sGT" userLabel="Main View Controller - Google Image Search" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="Ab0-Fa-VNx"/>
+                        <viewControllerLayoutGuide type="bottom" id="hvX-Wa-1fg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="vHy-wC-gYB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoogleSearch.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3lz-ql-6jJ">
+                                <rect key="frame" x="16" y="0.0" width="288" height="75"/>
+                                <animations/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N6i-Lj-ToN">
+                                <rect key="frame" x="16" y="119" width="288" height="449"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="c3Q-9O-sGT" id="vgX-oq-s6P"/>
+                                    <outlet property="delegate" destination="c3Q-9O-sGT" id="Pof-58-nOB"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="scaleToFill" placeholder="Search Images" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gs7-MU-SfN">
+                                <rect key="frame" x="16" y="75" width="288" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="c3Q-9O-sGT" id="hPJ-T0-Fgt"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="3lz-ql-6jJ" firstAttribute="top" secondItem="vHy-wC-gYB" secondAttribute="topMargin" id="0fd-hd-r5l"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="bottom" secondItem="N6i-Lj-ToN" secondAttribute="top" id="2hK-Hg-VHk"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="top" secondItem="3lz-ql-6jJ" secondAttribute="bottom" id="4Gl-hB-D7a"/>
+                            <constraint firstItem="3lz-ql-6jJ" firstAttribute="leading" secondItem="vHy-wC-gYB" secondAttribute="leadingMargin" id="AfA-Pc-VP4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gs7-MU-SfN" secondAttribute="trailing" id="Bar-b5-Pyt"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="trailing" secondItem="N6i-Lj-ToN" secondAttribute="trailing" id="Fzo-d0-Ewd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3lz-ql-6jJ" secondAttribute="trailing" id="MKX-Vb-Prl"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="leading" secondItem="N6i-Lj-ToN" secondAttribute="leading" id="R46-Id-fa6"/>
+                            <constraint firstItem="N6i-Lj-ToN" firstAttribute="bottom" secondItem="hvX-Wa-1fg" secondAttribute="top" id="XVD-7Q-YhP"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="top" secondItem="vHy-wC-gYB" secondAttribute="top" constant="75" id="d5p-To-cln"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="leading" secondItem="vHy-wC-gYB" secondAttribute="leadingMargin" id="evG-WI-U4I"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="trailing" secondItem="3lz-ql-6jJ" secondAttribute="trailing" id="h0l-lt-0jD"/>
+                            <constraint firstItem="Gs7-MU-SfN" firstAttribute="leading" secondItem="3lz-ql-6jJ" secondAttribute="leading" id="ztd-3S-pSk"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="ouN-Bf-tr9"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="searchbar" destination="Gs7-MU-SfN" id="WJz-do-TG1"/>
+                        <outlet property="tableView" destination="N6i-Lj-ToN" id="1Cv-6w-ybo"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUl-sp-Zge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-103" y="-63"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BId-qM-ejV">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="aky-61-6st" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fqX-Wa-sph">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CPn-x7-jce">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="c3Q-9O-sGT" kind="relationship" relationship="rootViewController" id="2K5-oB-aDW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1a-TH-czL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-470" y="-63"/>
+        </scene>
+        <!--Search Results-->
+        <scene sceneID="wbE-oM-ltl">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultsViewController" id="025-9J-PHu" customClass="SearchResultsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fZJ-4m-kVg"/>
+                        <viewControllerLayoutGuide type="bottom" id="aG7-UB-8rP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="91T-Oo-MlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="evg-3y-hMR">
+                                <rect key="frame" x="16" y="0.0" width="288" height="524"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="bWm-eS-uei" customClass="CHTCollectionViewWaterfallLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="dts-dr-QYZ" customClass="AMAImageViewCell">
+                                        <rect key="frame" x="44" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <size key="customSize" width="200" height="200"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="025-9J-PHu" id="zZz-Gq-1Kw"/>
+                                    <outlet property="delegate" destination="025-9J-PHu" id="s3o-ek-OB4"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="evg-3y-hMR" secondAttribute="trailing" id="1AB-xZ-3Tv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="evg-3y-hMR" secondAttribute="trailing" id="1Jc-O3-E1r"/>
+                            <constraint firstItem="evg-3y-hMR" firstAttribute="top" secondItem="91T-Oo-MlJ" secondAttribute="topMargin" id="Fjl-cD-Iar"/>
+                            <constraint firstItem="aG7-UB-8rP" firstAttribute="top" secondItem="evg-3y-hMR" secondAttribute="bottom" id="HOH-tL-Myt"/>
+                            <constraint firstItem="evg-3y-hMR" firstAttribute="top" secondItem="91T-Oo-MlJ" secondAttribute="topMargin" id="HQ4-75-i3s"/>
+                            <constraint firstItem="evg-3y-hMR" firstAttribute="leading" secondItem="91T-Oo-MlJ" secondAttribute="leadingMargin" id="Li3-WU-TLj"/>
+                            <constraint firstItem="evg-3y-hMR" firstAttribute="leading" secondItem="91T-Oo-MlJ" secondAttribute="leadingMargin" id="by1-Ff-F0H"/>
+                            <constraint firstItem="evg-3y-hMR" firstAttribute="leading" secondItem="91T-Oo-MlJ" secondAttribute="leadingMargin" id="hll-Cc-EhQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="evg-3y-hMR" secondAttribute="trailing" id="lbA-zk-qAx"/>
+                            <constraint firstItem="aG7-UB-8rP" firstAttribute="top" secondItem="evg-3y-hMR" secondAttribute="bottom" id="zHE-95-07r"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Search Results" id="4uT-Yc-WdH"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="evg-3y-hMR" id="ApP-gF-UeZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GnY-Bd-ziy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="-63"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="GoogleSearch.jpg" width="538" height="190"/>
+    </resources>
 </document>
